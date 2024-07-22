@@ -1,0 +1,1473 @@
+Manager:
+    Title:
+    Intro_page:
+    Index:
+
+    Q01_pg:
+    c1q1:
+    c1q2:
+    c1q3:
+    c1q4:
+    c1q5:
+
+    Q02_pg:
+    c2q1:
+    c2q2:
+    c2q3:
+    c2q4:
+    c2q5:
+    c2q6:
+
+    Q03_pg:
+    c3q1:
+    c3q2:
+    c3q3:
+    c3q4:
+    c3q5:
+
+    Q04_pg:
+    c4q1:
+    c4q2:
+    c4q3:
+
+    Q05_pg:
+    c5q1:
+    c5q2:
+    c5q3:
+    c5q4:
+    c5q5:
+
+    Q06_pg:
+    c6q1:
+    c6q2:
+    c6q3:
+    c6q4:
+    c6q5:
+
+
+<Title>:
+    name: "title_page"
+    FloatLayout:
+        Label:
+            text: "BrainStormie"
+            font_size: 48
+            color: 0, 0, 0,1
+            color: 255/255, 212/255, 212/255,1
+        Button:
+            background_color: 140/255, 100/255, 255/255
+            text: "Start"
+            color: 245/255, 136/255, 27/255
+            size_hint: None,0.1
+            width: "150dp"
+            pos_hint: {"center_x": 0.5,"y":0.1}
+            on_release: app.root.current = "intro"
+
+
+<Intro_page>:
+    name: "intro"
+    FloatLayout:
+        Image:
+            source: "Intro_page.png"
+            allow_stretch: True
+            keep_ratio: True
+            size_hint: 1,1
+        Button:
+            id: intro_btn
+            text: "I understand"
+            disabled: True
+            size_hint: None,0.05
+            width: "100dp"
+            pos_hint: {"center_x": 0.65,"y":0.07}
+            on_release: app.root.current = "index"
+        ToggleButton:
+            id: toggle
+            text: "YES" if self.state == "down" else "NO"
+            size_hint: None,0.05
+            width: "50dp"
+            pos_hint: {"center_x": 0.4,"y":0.07}
+            on_release: intro_btn.disabled = False
+            #on_press: intro_btn.disabled = True
+
+
+<Index>:
+    name: "index"
+    Label:
+        text: "INDEX"
+        pos_hint: {"center_x": 0.5, "top": 1}
+        size_hint: 1,0.18
+        font_size: 48
+        color: 0, 0, 0,1
+    FloatLayout:
+        orientation: "lr-tb"
+        minimum_height: 100
+        Button:
+            text: "Chapter 1"
+            size_hint: 0.3,0.07
+            pos_hint: {"top": 0.8, "right": 0.45}
+            background_color: 140/255, 100/255, 255/255
+            on_release: app.root.current = 'Q01_pg'
+        Button:
+            text: "Chapter 2"
+            size_hint: 0.3,0.07
+            pos_hint: {"top": 0.8, "right": 0.85}
+            background_color: 140/255, 100/255, 255/255
+            on_release: app.root.current = 'Q02_pg'
+        Button:
+            text: "Chapter 3"
+            size_hint: 0.3,0.07
+            pos_hint: {"top": 0.7, "right": 0.45}
+            background_color: 140/255, 100/255, 255/255
+            on_release: app.root.current = 'Q03_pg'
+        Button:
+            text: "Chapter 4"
+            size_hint: 0.3,0.07
+            pos_hint: {"top": 0.7, "right": 0.85}
+            background_color: 140/255, 100/255, 255/255
+            on_release: app.root.current = 'Q04_pg'
+        Button:
+            text: "Chapter 5"
+            size_hint: 0.3,0.07
+            pos_hint: {"top": 0.6, "right": 0.45}
+            background_color: 140/255, 100/255, 255/255
+            on_release: app.root.current = 'Q05_pg'
+        Button:
+            text: "Chapter 6"
+            size_hint: 0.3,0.07
+            pos_hint: {"top": 0.6, "right": 0.85}
+            background_color: 140/255, 100/255, 255/255
+            on_release: app.root.current = 'Q06_pg'
+<Q01_pg>:
+    name: "Q01_pg"
+    Label:
+        text: "Questions"
+        pos_hint: {"center_x": 0.5, "top": 1}
+        size_hint: 1,0.18
+        font_size: 48
+        color: 0, 0, 0,1
+    FloatLayout:
+        orientation: "lr-tb"
+        minimum_height: 100
+        Button:
+            text: "Question 1"
+            size_hint: 0.3,0.07
+            pos_hint: {"top": 0.8, "right": 0.45}
+            background_color: 140/255, 100/255, 255/255
+            on_release: app.root.current = 'c001q01'
+        Button:
+            text: "Question 2"
+            size_hint: 0.3,0.07
+            pos_hint: {"top": 0.8, "right": 0.85}
+            background_color: 140/255, 100/255, 255/255
+            on_release: app.root.current = 'c001q02'
+        Button:
+            text: "Question 3"
+            size_hint: 0.3,0.07
+            pos_hint: {"top": 0.7, "right": 0.45}
+            background_color: 140/255, 100/255, 255/255
+            on_release: app.root.current = 'c001q03'
+        Button:
+            text: "Question 4"
+            size_hint: 0.3,0.07
+            pos_hint: {"top": 0.7, "right": 0.85}
+            background_color: 140/255, 100/255, 255/255
+            on_release: app.root.current = 'c001q04'
+        Button:
+            text: "Question 5"
+            size_hint: 0.3,0.07
+            pos_hint: {"top": 0.6, "right": 0.45}
+            background_color: 140/255, 100/255, 255/255
+            on_release: app.root.current = 'c001q05'
+        Button:
+            text: "Go to Index"
+            size_hint: 0.3,0.07
+            pos_hint: {"bottom": 0.4, "center_x": 0.5}
+            background_color: 140/255, 100/255, 255/255
+            on_release: app.root.current = 'index'
+
+
+<c1q1>:
+    name: "c001q01"
+
+    Image:
+        id: c1q1
+        source: "Chapter-001/Questions/Q-001-01-01.png"
+        keep_ratio: True
+        allow_stretch: True
+    FloatLayout:
+
+        Button:
+            id: answer
+            text: "Answer"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.22, 0.05
+            pos_hint: {"center_x": 0.52, "center_y": 0.045}
+            on_press: root.change(c1q1,answer)
+
+        Button:
+            id: qp_btn
+            text: "Question page"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.25, 0.05
+            pos_hint: {"center_x": 0.2, "center_y": 0.045}
+            on_press:
+                app.root.transition.direction = "right"
+                app.root.current = "Q01_pg"
+        Button:
+            id: next
+            text: "Next page"
+            font_size: 15
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.2, 0.05
+            pos_hint: {"center_x": 0.82, "center_y": 0.045}
+            on_release: app.root.current = 'c001q02'
+
+
+<c1q2>:
+    name: "c001q02"
+
+    Image:
+        id: c1q2
+        source: "Chapter-001/Questions/Q-001-02-01.png"
+        keep_ratio: True
+        allow_stretch: True
+    FloatLayout:
+
+        Button:
+            id: answer
+            text: "Answer"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.22, 0.05
+            pos_hint: {"center_x": 0.52, "center_y": 0.045}
+            on_press: root.change(c1q2,answer)
+
+        Button:
+            id: qp_btn
+            text: "Question page"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.25, 0.05
+            pos_hint: {"center_x": 0.2, "center_y": 0.045}
+            on_press:
+                app.root.transition.direction = "right"
+                app.root.current = "Q01_pg"
+
+        Button:
+            id: next
+            text: "Next page"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.2, 0.05
+            pos_hint: {"center_x": 0.82, "center_y": 0.045}
+            on_release: app.root.current = 'c001q03'
+
+<c1q3>:
+    name: "c001q03"
+
+    Image:
+        id: c1q3
+        source: "Chapter-001/Questions/Q-001-03-01.png"
+        keep_ratio: True
+        allow_stretch: True
+    FloatLayout:
+
+        Button:
+            id: answer
+            text: "Answer"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.22, 0.05
+            pos_hint: {"center_x": 0.52, "center_y": 0.045}
+            on_press: root.change(c1q3,answer)
+
+        Button:
+            id: qp_btn
+            text: "Question page"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.25, 0.05
+            pos_hint: {"center_x": 0.2, "center_y": 0.045}
+            on_press:
+                app.root.transition.direction = "right"
+                app.root.current = "Q01_pg"
+
+        Button:
+            id: next
+            text: "Next page"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.2, 0.05
+            pos_hint: {"center_x": 0.82, "center_y": 0.045}
+            on_release: app.root.current = 'c001q04'
+
+<c1q4>:
+    name: "c001q04"
+
+    Image:
+        id: c1q4
+        source: "Chapter-001/Questions/Q-001-04-01.png"
+        keep_ratio: True
+        allow_stretch: True
+    FloatLayout:
+
+        Button:
+            id: ans2
+            text: "MORE"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.25, 0.05
+            pos_hint: {"center_x": 0.52, "center_y": 0.045}
+            on_press: root.ans_next(c1q4,ans2)
+
+        Button:
+            id: qp_btn
+            text: "Question page"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.25, 0.05
+            pos_hint: {"center_x": 0.2, "center_y": 0.045}
+            on_press:
+                app.root.transition.direction = "right"
+                app.root.current = "Q01_pg"
+
+        Button:
+            id: next
+            text: "Next page"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.2, 0.05
+            pos_hint: {"center_x": 0.82, "center_y": 0.045}
+            on_release: app.root.current = 'c001q05'
+
+<c1q5>:
+    name: "c001q05"
+
+    Image:
+        id: c1q5
+        source: "Chapter-001/Questions/Q-001-05-01.png"
+        keep_ratio: True
+        allow_stretch: True
+    FloatLayout:
+
+        Button:
+            id: answer
+            text: "Answer"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.22, 0.05
+            pos_hint: {"center_x": 0.52, "center_y": 0.045}
+            on_press: root.change(c1q5,answer)
+
+        Button:
+            id: qp_btn
+            text: "Question page"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.25, 0.05
+            pos_hint: {"center_x": 0.2, "center_y": 0.045}
+            on_press:
+                app.root.transition.direction = "right"
+                app.root.current = "Q01_pg"
+
+
+
+
+
+<Q02_pg>:
+    name: "Q02_pg"
+    Label:
+        text: "Questions"
+        pos_hint: {"center_x": 0.5, "top": 1}
+        size_hint: 1,0.18
+        font_size: 48
+        color: 0, 0, 0,1
+    FloatLayout:
+        orientation: "lr-tb"
+        minimum_height: 100
+        Button:
+            text: "Question 1"
+            size_hint: 0.3,0.07
+            pos_hint: {"top": 0.8, "right": 0.45}
+            background_color: 140/255, 100/255, 255/255
+            on_release: app.root.current = 'c002q01'
+        Button:
+            text: "Question 2"
+            size_hint: 0.3,0.07
+            pos_hint: {"top": 0.8, "right": 0.85}
+            background_color: 140/255, 100/255, 255/255
+            on_release: app.root.current = 'c002q02'
+        Button:
+            text: "Question 3"
+            size_hint: 0.3,0.07
+            pos_hint: {"top": 0.7, "right": 0.45}
+            background_color: 140/255, 100/255, 255/255
+            on_release: app.root.current = 'c002q03'
+        Button:
+            text: "Question 4"
+            size_hint: 0.3,0.07
+            pos_hint: {"top": 0.7, "right": 0.85}
+            background_color: 140/255, 100/255, 255/255
+            on_release: app.root.current = 'c002q04'
+        Button:
+            text: "Question 5"
+            size_hint: 0.3,0.07
+            pos_hint: {"top": 0.6, "right": 0.45}
+            background_color: 140/255, 100/255, 255/255
+            on_release: app.root.current = 'c002q05'
+        Button:
+            text: "Question 6"
+            size_hint: 0.3,0.07
+            pos_hint: {"top": 0.6, "right": 0.85}
+            background_color: 140/255, 100/255, 255/255
+
+
+        Button:
+            text: "Go to Index"
+            size_hint: 0.3,0.07
+            pos_hint: {"bottom": 0.4, "center_x": 0.5}
+            background_color: 140/255, 100/255, 255/255
+            on_release: app.root.current = 'index'
+<c2q1>:
+    name: "c002q01"
+
+    Image:
+        id: c2q1
+        source: "Chapter-002/Questions/Q-002-01-01.png"
+        keep_ratio: True
+        allow_stretch: True
+    FloatLayout:
+
+        Button:
+            id: answer
+            text: "Answer"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.22, 0.05
+            pos_hint: {"center_x": 0.52, "center_y": 0.1}
+            on_press: root.change(c2q1,answer)
+
+        Button:
+            id: qp_btn
+            text: "Question page"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.25, 0.05
+            pos_hint: {"center_x": 0.2, "center_y": 0.1}
+            on_press:
+                app.root.transition.direction = "right"
+                app.root.current = "Q02_pg"
+        Button:
+            id: next
+            text: "Next page"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.2, 0.05
+            pos_hint: {"center_x": 0.82, "center_y": 0.1}
+            on_release: app.root.current = 'c002q02'
+
+
+<c2q2>:
+    name: "c002q02"
+
+    Image:
+        id: c2q2
+        source: "Chapter-002/Questions/Q-002-02-01.png"
+        keep_ratio: True
+        allow_stretch: True
+    FloatLayout:
+
+        Button:
+            id: answer
+            text: "Answer"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.22, 0.05
+            pos_hint: {"center_x": 0.52, "center_y": 0.1}
+            on_press: root.change(c2q2,answer)
+
+        Button:
+            id: qp_btn
+            text: "Question page"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.25, 0.05
+            pos_hint: {"center_x": 0.2, "center_y": 0.1}
+            on_press:
+                app.root.transition.direction = "right"
+                app.root.current = "Q02_pg"
+
+        Button:
+            id: next
+            text: "Next page"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.2, 0.05
+            pos_hint: {"center_x": 0.82, "center_y": 0.1}
+            on_release: app.root.current = 'c002q03'
+
+<c2q3>:
+    name: "c002q03"
+
+    Image:
+        id: c2q3
+        source: "Chapter-002/Questions/Q-002-03-01.png"
+        keep_ratio: True
+        allow_stretch: True
+    FloatLayout:
+
+        Button:
+            id: answer
+            text: "Answer"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.22, 0.05
+            pos_hint: {"center_x": 0.52, "center_y": 0.1}
+            on_press: root.change(c2q3,answer)
+
+        Button:
+            id: qp_btn
+            text: "Question page"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.25, 0.05
+            pos_hint: {"center_x": 0.2, "center_y": 0.1}
+            on_press:
+                app.root.transition.direction = "right"
+                app.root.current = "Q02_pg"
+
+        Button:
+            id: next
+            text: "Next page"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.2, 0.05
+            pos_hint: {"center_x": 0.82, "center_y": 0.1}
+            on_release: app.root.current = 'c002q04'
+
+<c2q4>:
+    name: "c002q04"
+
+    Image:
+        id: c2q4
+        source: "Chapter-002/Questions/Q-002-04-01.png"
+        keep_ratio: True
+        allow_stretch: True
+    FloatLayout:
+
+        Button:
+            id: answer
+            text: "Answer"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.22, 0.05
+            pos_hint: {"center_x": 0.52, "center_y": 0.1}
+            on_press: root.change(c2q4,answer)
+
+        Button:
+            id: qp_btn
+            text: "Question page"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.25, 0.05
+            pos_hint: {"center_x": 0.2, "center_y": 0.1}
+            on_press:
+                app.root.transition.direction = "right"
+                app.root.current = "Q02_pg"
+
+        Button:
+            id: next
+            text: "Next page"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.2, 0.05
+            pos_hint: {"center_x": 0.82, "center_y": 0.1}
+            on_release: app.root.current = 'c002q05'
+
+<c2q5>:
+    name: "c002q05"
+
+    Image:
+        id: c2q5
+        source: "Chapter-002/Questions/Q-002-05-01.png"
+        keep_ratio: True
+        allow_stretch: True
+    FloatLayout:
+
+        Button:
+            id: answer
+            text: "Answer"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.22, 0.05
+            pos_hint: {"center_x": 0.52, "center_y": 0.1}
+            on_press: root.change(c2q5,answer)
+
+        Button:
+            id: qp_btn
+            text: "Question page"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.25, 0.05
+            pos_hint: {"center_x": 0.2, "center_y": 0.1}
+            on_press:
+                app.root.transition.direction = "right"
+                app.root.current = "Q02_pg"
+
+        Button:
+            id: next
+            text: "Next page"
+            font_size: 15
+            color: 0,0,0,1
+            size_hint: 0.2, 0.05
+            pos_hint: {"center_x": 0.82, "center_y": 0.1}
+            on_release: app.root.current = 'c002q06'
+
+<c2q6>:
+    name: "c002q06"
+
+    Image:
+        id: c2q6
+        source: "Chapter-002/Questions/Q-002-06-01.png"
+        keep_ratio: True
+        allow_stretch: True
+    FloatLayout:
+
+        Button:
+            id: answer
+            text: "Answer"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.22, 0.05
+            pos_hint: {"center_x": 0.52, "center_y": 0.1}
+            on_press: root.change(c2q6,answer)
+
+        Button:
+            id: qp_btn
+            text: "Question page"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.25, 0.05
+            pos_hint: {"center_x": 0.2, "center_y": 0.1}
+            on_press:
+                app.root.transition.direction = "right"
+                app.root.current = "Q02_pg"
+
+
+
+<Q03_pg>:
+    name: "Q03_pg"
+    Label:
+        text: "Questions"
+        pos_hint: {"center_x": 0.5, "top": 1}
+        size_hint: 1,0.18
+        font_size: 48
+        color: 0, 0, 0,1
+    FloatLayout:
+        orientation: "lr-tb"
+        minimum_height: 100
+        Button:
+            text: "Question 1"
+            size_hint: 0.3,0.07
+            pos_hint: {"top": 0.8, "right": 0.45}
+            background_color: 140/255, 100/255, 255/255
+            on_release: app.root.current = 'c003q01'
+        Button:
+            text: "Question 2"
+            size_hint: 0.3,0.07
+            pos_hint: {"top": 0.8, "right": 0.85}
+            background_color: 140/255, 100/255, 255/255
+            on_release: app.root.current = 'c003q02'
+        Button:
+            text: "Question 3"
+            size_hint: 0.3,0.07
+            pos_hint: {"top": 0.7, "right": 0.45}
+            background_color: 140/255, 100/255, 255/255
+            on_release: app.root.current = 'c003q03'
+        Button:
+            text: "Question 4"
+            size_hint: 0.3,0.07
+            pos_hint: {"top": 0.7, "right": 0.85}
+            background_color: 140/255, 100/255, 255/255
+            on_release: app.root.current = 'c003q04'
+        Button:
+            text: "Question 5"
+            size_hint: 0.3,0.07
+            pos_hint: {"top": 0.6, "right": 0.45}
+            background_color: 140/255, 100/255, 255/255
+            on_release: app.root.current = 'c003q05'
+
+        Button:
+            text: "Go to Index"
+            size_hint: 0.3,0.07
+            pos_hint: {"bottom": 0.4, "center_x": 0.5}
+            background_color: 140/255, 100/255, 255/255
+            on_release: app.root.current = 'index'
+<c3q1>:
+    name: "c003q01"
+
+    Image:
+        id: c3q1
+        source: "Chapter-003/Questions/Q-003-01-01.png"
+        keep_ratio: True
+        allow_stretch: True
+    FloatLayout:
+
+        Button:
+            id: answer
+            text: "Answer"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.22, 0.05
+            pos_hint: {"center_x": 0.52, "center_y": 0.1}
+            on_press: root.change(c3q1,answer)
+
+        Button:
+            id: qp_btn
+            text: "Question page"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.25, 0.05
+            pos_hint: {"center_x": 0.2, "center_y": 0.1}
+            on_press:
+                app.root.transition.direction = "right"
+                app.root.current = "Q03_pg"
+        Button:
+            id: next
+            text: "Next page"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.2, 0.05
+            pos_hint: {"center_x": 0.82, "center_y": 0.1}
+            on_release: app.root.current = 'c003q02'
+
+
+<c3q2>:
+    name: "c003q02"
+
+    Image:
+        id: c3q2
+        source: "Chapter-003/Questions/Q-003-02-01.png"
+        keep_ratio: True
+        allow_stretch: True
+    FloatLayout:
+
+        Button:
+            id: answer
+            text: "Answer"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.22, 0.05
+            pos_hint: {"center_x": 0.52, "center_y": 0.1}
+            on_press: root.change(c3q2,answer)
+
+        Button:
+            id: qp_btn
+            text: "Question page"
+            font_size: 15
+            color: 0,0,0,1
+            size_hint: 0.25, 0.05
+            pos_hint: {"center_x": 0.2, "center_y": 0.1}
+            on_press:
+                app.root.transition.direction = "right"
+                app.root.current = "Q03_pg"
+
+        Button:
+            id: next
+            text: "Next page"
+            font_size: 15
+            color: 0,0,0,1
+            size_hint: 0.2, 0.05
+            pos_hint: {"center_x": 0.82, "center_y": 0.1}
+            on_release: app.root.current = 'c003q03'
+
+<c3q3>:
+    name: "c003q03"
+
+    Image:
+        id: c3q3
+        source: "Chapter-003/Questions/Q-003-03-01.png"
+        keep_ratio: True
+        allow_stretch: True
+    FloatLayout:
+
+        Button:
+            id: answer
+            text: "Answer"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.22, 0.05
+            pos_hint: {"center_x": 0.52, "center_y": 0.1}
+            on_press: root.change(c3q3,answer)
+
+        Button:
+            id: qp_btn
+            text: "Question page"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.25, 0.05
+            pos_hint: {"center_x": 0.2, "center_y": 0.1}
+            on_press:
+                app.root.transition.direction = "right"
+                app.root.current = "Q03_pg"
+
+        Button:
+            id: next
+            text: "Next page"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.2, 0.05
+            pos_hint: {"center_x": 0.82, "center_y": 0.1}
+            on_release: app.root.current = 'c003q04'
+
+<c3q4>:
+    name: "c003q04"
+
+    Image:
+        id: c3q4
+        source: "Chapter-003/Questions/Q-003-04-01.png"
+        keep_ratio: True
+        allow_stretch: True
+    FloatLayout:
+
+        Button:
+            id: answer
+            text: "Answer"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.22, 0.05
+            pos_hint: {"center_x": 0.52, "center_y": 0.1}
+            on_press: root.change(c3q4,answer)
+
+        Button:
+            id: qp_btn
+            text: "Question page"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.25, 0.05
+            pos_hint: {"center_x": 0.2, "center_y": 0.1}
+            on_press:
+                app.root.transition.direction = "right"
+                app.root.current = "Q03_pg"
+
+        Button:
+            id: next
+            text: "Next page"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.2, 0.05
+            pos_hint: {"center_x": 0.82, "center_y": 0.1}
+            on_release: app.root.current = 'c003q05'
+
+<c3q5>:
+    name: "c003q05"
+
+    Image:
+        id: c3q5
+        source: "Chapter-003/Questions/Q-003-05-01.png"
+        keep_ratio: True
+        allow_stretch: True
+    FloatLayout:
+
+        Button:
+            id: answer
+            text: "Answer"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.22, 0.05
+            pos_hint: {"center_x": 0.52, "center_y": 0.1}
+            on_press: root.change(c3q5,answer)
+
+        Button:
+            id: qp_btn
+            text: "Question page"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.25, 0.05
+            pos_hint: {"center_x": 0.2, "center_y": 0.1}
+            on_press:
+                app.root.transition.direction = "right"
+                app.root.current = "Q03_pg"
+
+
+<Q04_pg>:
+    name: "Q04_pg"
+    Label:
+        text: "Questions"
+        pos_hint: {"center_x": 0.5, "top": 1}
+        size_hint: 1,0.18
+        font_size: 48
+        color: 0, 0, 0,1
+    FloatLayout:
+        orientation: "lr-tb"
+        minimum_height: 100
+        Button:
+            text: "Question 1"
+            size_hint: 0.3,0.07
+            pos_hint: {"top": 0.8, "right": 0.45}
+            background_color: 140/255, 100/255, 255/255
+            on_release: app.root.current = 'c004q01'
+        Button:
+            text: "Question 2"
+            size_hint: 0.3,0.07
+            pos_hint: {"top": 0.8, "right": 0.85}
+            background_color: 140/255, 100/255, 255/255
+            on_release: app.root.current = 'c004q02'
+        Button:
+            text: "Question 3"
+            size_hint: 0.3,0.07
+            pos_hint: {"top": 0.7, "right": 0.45}
+            background_color: 140/255, 100/255, 255/255
+            on_release: app.root.current = 'c004q03'
+
+        Button:
+            text: "Go to Index"
+            size_hint: 0.3,0.07
+            pos_hint: {"bottom": 0.4, "center_x": 0.5}
+            background_color: 140/255, 100/255, 255/255
+            on_release: app.root.current = 'index'
+
+<c4q1>:
+    name: "c004q01"
+
+    Image:
+        id: c4q1
+        source: "Chapter-004/Questions/Q-004-01-01.png"
+        keep_ratio: True
+        allow_stretch: True
+    FloatLayout:
+
+        Button:
+            id: answer
+            text: "Answer"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.22, 0.05
+            pos_hint: {"center_x": 0.52, "center_y": 0.045}
+            on_press: root.change(c4q1,answer)
+
+        Button:
+            id: qp_btn
+            text: "Question page"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.25, 0.05
+            pos_hint: {"center_x": 0.2, "center_y": 0.045}
+            on_press:
+                app.root.transition.direction = "right"
+                app.root.current = "Q01_pg"
+        Button:
+            id: next
+            text: "Next page"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.2, 0.05
+            pos_hint: {"center_x": 0.82, "center_y": 0.045}
+            on_release: app.root.current = 'c004q02'
+        Button:
+            id: next
+            text: "MORE"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.2, 0.05
+            pos_hint: {"center_x": 0.82, "center_y": 0.1}
+	        on_release: root.ans_next(c4q1,next)
+
+
+
+<c4q2>:
+    name: "c004q02"
+
+    Image:
+        id: c4q2
+        source: "Chapter-004/Questions/Q-004-02-01.png"
+        keep_ratio: True
+        allow_stretch: True
+    FloatLayout:
+
+        Button:
+            id: answer
+            text: "Answer"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.22, 0.05
+            pos_hint: {"center_x": 0.52, "center_y": 0.045}
+            on_press: root.change(c4q2,answer)
+
+        Button:
+            id: qp_btn
+            text: "Question page"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.25, 0.05
+            pos_hint: {"center_x": 0.2, "center_y": 0.045}
+            on_press:
+                app.root.transition.direction = "right"
+                app.root.current = "Q01_pg"
+
+        Button:
+            id: next
+            text: "Next page"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.2, 0.05
+            pos_hint: {"center_x": 0.82, "center_y": 0.045}
+            on_release: app.root.current = 'c004q03'
+        Button:
+            id: next
+            text: "MORE"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.2, 0.05
+            pos_hint: {"center_x": 0.82, "center_y": 0.1}
+	        on_release: root.ans_next(c4q2,next)
+
+<c4q3>:
+    name: "c004q03"
+
+    Image:
+        id: c4q3
+        source: "Chapter-004/Questions/Q-004-03-01.png"
+        keep_ratio: True
+        allow_stretch: True
+    FloatLayout:
+
+        Button:
+            id: answer
+            text: "Answer"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.22, 0.05
+            pos_hint: {"center_x": 0.52, "center_y": 0.045}
+            on_press: root.change(c4q3,answer)
+
+        Button:
+            id: qp_btn
+            text: "Question page"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.25, 0.05
+            pos_hint: {"center_x": 0.2, "center_y": 0.045}
+            on_press:
+                app.root.transition.direction = "right"
+                app.root.current = "Q04_pg"
+
+        Button:
+            id: next
+            text: "MORE"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.2, 0.05
+            pos_hint: {"center_x": 0.82, "center_y": 0.1}
+	        on_release: root.ans_next(c4q3,next)
+<Q04_pg>:
+    name: "Q05_pg"
+    Label:
+        text: "Questions"
+        pos_hint: {"center_x": 0.5, "top": 1}
+        size_hint: 1,0.18
+        font_size: 48
+        color: 0, 0, 0,1
+    FloatLayout:
+        orientation: "lr-tb"
+        minimum_height: 100
+        Button:
+            text: "Question 1"
+            size_hint: 0.3,0.07
+            pos_hint: {"top": 0.8, "right": 0.45}
+            background_color: 140/255, 100/255, 255/255
+            on_release: app.root.current = 'c005q01'
+        Button:
+            text: "Question 2"
+            size_hint: 0.3,0.07
+            pos_hint: {"top": 0.8, "right": 0.85}
+            background_color: 140/255, 100/255, 255/255
+            on_release: app.root.current = 'c005q02'
+        Button:
+            text: "Question 3"
+            size_hint: 0.3,0.07
+            pos_hint: {"top": 0.7, "right": 0.45}
+            background_color: 140/255, 100/255, 255/255
+            on_release: app.root.current = 'c005q03'
+        Button:
+            text: "Question 4"
+            size_hint: 0.3,0.07
+            pos_hint: {"top": 0.7, "right": 0.85}
+            background_color: 140/255, 100/255, 255/255
+            on_release: app.root.current = 'c005q04'
+        Button:
+            text: "Question 5"
+            size_hint: 0.3,0.07
+            pos_hint: {"top": 0.6, "right": 0.45}
+            background_color: 140/255, 100/255, 255/255
+            on_release: app.root.current = 'c005q05'
+
+        Button:
+            text: "Go to Index"
+            size_hint: 0.3,0.07
+            pos_hint: {"bottom": 0.4, "center_x": 0.5}
+            background_color: 140/255, 100/255, 255/255
+            on_release: app.root.current = 'index'
+
+<c5q1>:
+    name: "c005q01"
+
+    Image:
+        id: c5q1
+        source: "Chapter-005/Questions/Q-005-01-01.png"
+        keep_ratio: True
+        allow_stretch: True
+    FloatLayout:
+
+        Button:
+            id: answer
+            text: "Answer"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.22, 0.05
+            pos_hint: {"center_x": 0.52, "center_y": 0.045}
+            on_press: root.change(c5q1,answer)
+
+        Button:
+            id: qp_btn
+            text: "Question page"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.25, 0.05
+            pos_hint: {"center_x": 0.2, "center_y": 0.045}
+            on_press:
+                app.root.transition.direction = "right"
+                app.root.current = "Q05_pg"
+        Button:
+            id: next
+            text: "Next page"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.2, 0.05
+            pos_hint: {"center_x": 0.82, "center_y": 0.045}
+            on_release: app.root.current = 'c005q02'
+        Button:
+            id: next
+            text: "MORE"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.2, 0.05
+            pos_hint: {"center_x": 0.82, "center_y": 0.1}
+	        on_release: root.ans_next(c5q1,next)
+
+
+
+<c5q2>:
+    name: "c005q02"
+
+    Image:
+        id: c5q2
+        source: "Chapter-005/Questions/Q-005-02-01.png"
+        keep_ratio: True
+        allow_stretch: True
+    FloatLayout:
+
+        Button:
+            id: answer
+            text: "Answer"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.22, 0.05
+            pos_hint: {"center_x": 0.52, "center_y": 0.045}
+            on_press: root.change(c5q2,answer)
+
+        Button:
+            id: qp_btn
+            text: "Question page"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.25, 0.05
+            pos_hint: {"center_x": 0.2, "center_y": 0.045}
+            on_press:
+                app.root.transition.direction = "right"
+                app.root.current = "Q05_pg"
+
+        Button:
+            id: next
+            text: "Next page"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.2, 0.05
+            pos_hint: {"center_x": 0.82, "center_y": 0.045}
+            on_release: app.root.current = 'c005q03'
+        Button:
+            id: next
+            text: "MORE"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.2, 0.05
+            pos_hint: {"center_x": 0.82, "center_y": 0.1}
+	        on_release: root.ans_next(c5q2,next)
+
+<c5q3>:
+    name: "c005q03"
+
+    Image:
+        id: c5q3
+        source: "Chapter-005/Questions/Q-005-03-01.png"
+        keep_ratio: True
+        allow_stretch: True
+    FloatLayout:
+
+        Button:
+            id: answer
+            text: "Answer"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.22, 0.05
+            pos_hint: {"center_x": 0.52, "center_y": 0.045}
+            on_press: root.change(c5q3,answer)
+
+        Button:
+            id: qp_btn
+            text: "Question page"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.25, 0.05
+            pos_hint: {"center_x": 0.2, "center_y": 0.045}
+            on_press:
+                app.root.transition.direction = "right"
+                app.root.current = "Q05_pg"
+
+        Button:
+            id: next
+            text: "Next page"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.2, 0.05
+            pos_hint: {"center_x": 0.82, "center_y": 0.045}
+            on_release: app.root.current = 'c005q04'
+        Button:
+            id: next
+            text: "MORE"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.2, 0.05
+            pos_hint: {"center_x": 0.82, "center_y": 0.1}
+	        on_release: root.ans_next(c5q3,next)
+<c5q4>:
+    name: "c005q04"
+
+    Image:
+        id: c5q4
+        source: "Chapter-005/Questions/Q-005-04-01.png"
+        keep_ratio: True
+        allow_stretch: True
+    FloatLayout:
+
+        Button:
+            id: answer
+            text: "Answer"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.22, 0.05
+            pos_hint: {"center_x": 0.52, "center_y": 0.1}
+            on_press: root.change(c5q4,answer)
+
+        Button:
+            id: qp_btn
+            text: "Question page"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.25, 0.05
+            pos_hint: {"center_x": 0.2, "center_y": 0.1}
+            on_press:
+                app.root.transition.direction = "right"
+                app.root.current = "Q05_pg"
+
+        Button:
+            id: next
+            text: "Next page"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.2, 0.05
+            pos_hint: {"center_x": 0.82, "center_y": 0.1}
+            on_release: app.root.current = 'c005q05'
+
+<c5q5>:
+    name: "c005q05"
+
+    Image:
+        id: c5q5
+        source: "Chapter-005/Questions/Q-005-05-01.png"
+        keep_ratio: True
+        allow_stretch: True
+    FloatLayout:
+
+        Button:
+            id: answer
+            text: "Answer"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.22, 0.05
+            pos_hint: {"center_x": 0.52, "center_y": 0.1}
+            on_press: root.change(c5q5,answer)
+
+        Button:
+            id: qp_btn
+            text: "Question page"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.25, 0.05
+            pos_hint: {"center_x": 0.2, "center_y": 0.1}
+            on_press:
+                app.root.transition.direction = "right"
+                app.root.current = "Q05_pg"
+
+
+<Q06_pg>:
+    name: "Q06_pg"
+    Label:
+        text: "Questions"
+        pos_hint: {"center_x": 0.5, "top": 1}
+        size_hint: 1,0.18
+        font_size: 48
+        color: 0, 0, 0,1
+    FloatLayout:
+        orientation: "lr-tb"
+        minimum_height: 100
+        Button:
+            text: "Question 1"
+            size_hint: 0.3,0.07
+            pos_hint: {"top": 0.8, "right": 0.45}
+            background_color: 140/255, 100/255, 255/255
+            on_release: app.root.current = 'c006q01'
+        Button:
+            text: "Question 2"
+            size_hint: 0.3,0.07
+            pos_hint: {"top": 0.8, "right": 0.85}
+            background_color: 140/255, 100/255, 255/255
+            on_release: app.root.current = 'c006q02'
+        Button:
+            text: "Question 3"
+            size_hint: 0.3,0.07
+            pos_hint: {"top": 0.7, "right": 0.45}
+            background_color: 140/255, 100/255, 255/255
+            on_release: app.root.current = 'c006Q03'
+        Button:
+            text: "Question 4"
+            size_hint: 0.3,0.07
+            pos_hint: {"top": 0.7, "right": 0.85}
+            background_color: 140/255, 100/255, 255/255
+            on_release: app.root.current = 'c006q04'
+        Button:
+            text: "Question 5"
+            size_hint: 0.3,0.07
+            pos_hint: {"top": 0.6, "right": 0.45}
+            background_color: 140/255, 100/255, 255/255
+            on_release: app.root.current = 'c006q05'
+
+        Button:
+            text: "Go to Index"
+            size_hint: 0.3,0.07
+            pos_hint: {"bottom": 0.4, "center_x": 0.5}
+            background_color: 140/255, 100/255, 255/255
+            on_release: app.root.current = 'index'
+<c6q1>:
+    name: "c006q01"
+
+    Image:
+        id: c6q1
+        source: "Chapter-006/Questions/Q-006-01-01.png"
+        keep_ratio: True
+        allow_stretch: True
+    FloatLayout:
+
+        Button:
+            id: answer
+            text: "Answer"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.22, 0.05
+            pos_hint: {"center_x": 0.52, "center_y": 0.1}
+            on_press: root.change(c6q1,answer)
+
+        Button:
+            id: qp_btn
+            text: "Question page"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.25, 0.05
+            pos_hint: {"center_x": 0.2, "center_y": 0.1}
+            on_press:
+                app.root.transition.direction = "right"
+                app.root.current = "Q06_pg"
+        Button:
+            id: next
+            text: "Next page"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.2, 0.05
+            pos_hint: {"center_x": 0.82, "center_y": 0.1}
+            on_release: app.root.current = 'c006q02'
+
+
+<c6q2>:
+    name: "c006q02"
+
+    Image:
+        id: c6q2
+        source: "Chapter-006/Questions/Q-006-02-01.png"
+        keep_ratio: True
+        allow_stretch: True
+    FloatLayout:
+
+        Button:
+            id: answer
+            text: "Answer"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.22, 0.05
+            pos_hint: {"center_x": 0.52, "center_y": 0.1}
+            on_press: root.change(c6q2,answer)
+
+        Button:
+            id: qp_btn
+            text: "Question page"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.25, 0.05
+            pos_hint: {"center_x": 0.2, "center_y": 0.1}
+            on_press:
+                app.root.transition.direction = "right"
+                app.root.current = "Q06_pg"
+
+        Button:
+            id: next
+            text: "Next page"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.2, 0.05
+            pos_hint: {"center_x": 0.82, "center_y": 0.1}
+            on_release: app.root.current = 'c006Q03'
+
+<c6q3>:
+    name: "c006Q03"
+
+    Image:
+        id: c6q3
+        source: "Chapter-006/Questions/Q-006-03-01.png"
+        keep_ratio: True
+        allow_stretch: True
+    FloatLayout:
+
+        Button:
+            id: answer
+            text: "Answer"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.22, 0.05
+            pos_hint: {"center_x": 0.52, "center_y": 0.1}
+            on_press: root.change(c6q3,answer)
+
+        Button:
+            id: qp_btn
+            text: "Question page"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.25, 0.05
+            pos_hint: {"center_x": 0.2, "center_y": 0.1}
+            on_press:
+                app.root.transition.direction = "right"
+                app.root.current = "Q06_pg"
+
+        Button:
+            id: next
+            text: "Next page"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.2, 0.05
+            pos_hint: {"center_x": 0.82, "center_y": 0.1}
+            on_release: app.root.current = 'c006q04'
+
+<c6q4>:
+    name: "c006q04"
+
+    Image:
+        id: c6q4
+        source: "Chapter-006/Questions/Q-006-04-01.png"
+        keep_ratio: True
+        allow_stretch: True
+    FloatLayout:
+
+        Button:
+            id: answer
+            text: "Answer"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.22, 0.05
+            pos_hint: {"center_x": 0.52, "center_y": 0.1}
+            on_press: root.change(c6q4,answer)
+
+        Button:
+            id: qp_btn
+            text: "Question page"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.25, 0.05
+            pos_hint: {"center_x": 0.2, "center_y": 0.1}
+            on_press:
+                app.root.transition.direction = "right"
+                app.root.current = "Q06_pg"
+
+        Button:
+            id: next
+            text: "Next page"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.2, 0.05
+            pos_hint: {"center_x": 0.82, "center_y": 0.1}
+            on_release: app.root.current = 'c006q05'
+
+<c6q5>:
+    name: "c006q05"
+
+    Image:
+        id: c6q5
+        source: "Chapter-006/Questions/Q-006-05-01.png"
+        keep_ratio: True
+        allow_stretch: True
+    FloatLayout:
+
+        Button:
+            id: answer
+            text: "Answer"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.22, 0.05
+            pos_hint: {"center_x": 0.52, "center_y": 0.1}
+            on_press: root.change(c6q5,answer)
+
+        Button:
+            id: qp_btn
+            text: "Question page"
+            background_color: 140/255, 100/255, 255/255
+            size_hint: 0.25, 0.05
+            pos_hint: {"center_x": 0.2, "center_y": 0.1}
+            on_press:
+                app.root.transition.direction = "right"
+                app.root.current = "Q06_pg"
